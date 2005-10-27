@@ -1,11 +1,12 @@
 " Visual Mark
-" 2005-03-15, brian wang
+" 2005-10-27, brian wang
 "
 " Acknowledgements:
 "   - Thanks to Hari Krishna Dara's genutils.vim (http://vim.sourceforge.net/scripts/script.php?script_id=197)
 "   - Thanks to Mr. Charles E. Campbell, Jr. for making this script more plugin-like :-)
 "   - Thanks to Mr. Charles E. Campbell, Jr. for making this script adapt to
 "     dark/light backgrounds
+"   - Thanks to Evgeny Filatov for noticing a nasty bug in Vm_get_line_number :-)
 
 if exists("loaded_VisualMark")
   finish
@@ -182,7 +183,7 @@ fun! s:Vm_get_line_number(string)
   let b:Vm_start_from  = space_index
 
 "  call Dret("Vm_get_line_number ".line_number." : =indx:".equal_sign_index." _indx=".space_index)
-  return line_number
+  return line_number + 0
 endfun
 
 " ---------------------------------------------------------------------
